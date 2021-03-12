@@ -4,13 +4,13 @@ author:
     url: https://github.com/marwin1991
 merge_request: 1
 issue: 1
-links:
+links:  # links to external systems, like redmine something else
   - name: TASK_NUMBER
     url: https://www.google.pl
-type: fixed #[added/changed/deprecated/removed/fixed/security]
+type: fixed # [added/changed/deprecated/removed/fixed/security]
 version_recommendations: Update style.css on server during instalation
-configuration:
-  - action: add #[add/update/delete]
+configuration: # information about changes in availabe application configuration
+  - action: add # [add/update/delete]
     name: simpleparam.name.enabled
     default_value: "true" #always string
     description: Enables displying feature name
