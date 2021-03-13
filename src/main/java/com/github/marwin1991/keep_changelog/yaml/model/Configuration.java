@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Configuration {
 
     private ConfigurationAction action;
-    private String name;
+    private String key;
     private String defaultValue;
     private String description;
     private String type;

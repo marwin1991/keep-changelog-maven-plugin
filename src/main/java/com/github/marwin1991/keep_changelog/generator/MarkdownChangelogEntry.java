@@ -12,7 +12,7 @@ import org.apache.commons.text.StringSubstitutor;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MdEntry {
+public class MarkdownChangelogEntry {
     private static final String entryFormat = "${title} ${merge_request} ${issues} ${links} ${authors}";
     private static final String mergeRequestFormat = "!${merge_request}";
     private static final String issueFormat = "#${issue}";
@@ -20,7 +20,7 @@ public class MdEntry {
 
     private final ChangelogEntry entry;
 
-    public MdEntry(ChangelogEntry entry) {
+    public MarkdownChangelogEntry(ChangelogEntry entry) {
         this.entry = entry;
     }
 

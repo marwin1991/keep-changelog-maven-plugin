@@ -21,7 +21,7 @@ public class ChangelogGenerator {
                 .append(generateHeader(changelog.getHeader())).append("\n");
 
         for (ChangelogVersion version : changelog.getVersions()) {
-            stringBuilder.append(generateVersionHeading(version)).append("\n");
+            stringBuilder.append(new MarkdownChangelogVersion(version).toMarkdown()).append("\n");
             stringBuilder = generateVersionBody(stringBuilder, version.getEntries()).append("\n");
         }
         return stringBuilder.toString();
@@ -38,9 +38,6 @@ public class ChangelogGenerator {
             stringBuilder = generateType(stringBuilder, entriesByType);
         }
 
-        //TODO recomendations
-        //TODO configuration
-
         return stringBuilder;
     }
 
@@ -55,7 +52,7 @@ public class ChangelogGenerator {
 
     private StringBuilder generateTypeBody(StringBuilder stringBuilder, List<ChangelogEntry> entriesByType) {
         for (ChangelogEntry entry : entriesByType) {
-            stringBuilder.append(new MdEntry(entry).toMarkdown()).append("\n");
+            stringBuilder.append(new MarkdownChangelogEntry(entry).toMarkdown()).append("\n");
         }
 
         return stringBuilder;

@@ -14,11 +14,11 @@ links: # links to external systems, like redmine something else
   - name: other link
     url: https://www.google.pl
 type: removed # [added/changed/deprecated/removed/fixed/security]
-version_recommendations: Update style.css on server during instalation
-configuration: # information about changes in availabe application configuration
+recommendations: some realy important recomendation
+configuration: # information about changes in available application configuration
   - action: add # [add/update/delete]
-    name: simpleparam.name.enabled
-    default_value: "true" #always string
+    key: simpleparam.name.enabled
+    default_value: true
     description: Enables displying feature name
     type: database parameter
 

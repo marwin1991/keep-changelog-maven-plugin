@@ -21,7 +21,7 @@ public class ChangelogEntry {
     private List<String> issues;
     private List<ChangelogLink> links;
     private ChangeLogEntryType type;
-    private String versionRecommendations;
+    private List<String> recommendations;
     private List<Configuration> configuration;
 
     @YamlProperty(key = "merge_request")
@@ -34,8 +34,4 @@ public class ChangelogEntry {
         this.type = type;
     }
 
-    @YamlProperty(key = "version_recommendations")
-    public void setVersionRecommendations(String versionRecommendations) {
-        this.versionRecommendations = versionRecommendations;
-    }
 }
