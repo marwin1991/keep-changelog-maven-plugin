@@ -4,7 +4,6 @@ import com.github.marwin1991.keep_changelog.model.Changelog;
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangeLogEntryType;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
-import net.steppschuh.markdowngenerator.list.UnorderedListItem;
 import net.steppschuh.markdowngenerator.text.Text;
 import net.steppschuh.markdowngenerator.text.heading.Heading;
 import org.apache.commons.lang3.StringUtils;
@@ -48,7 +47,7 @@ public class ChangelogGenerator {
     private StringBuilder generateType(StringBuilder stringBuilder, List<ChangelogEntry> entriesByType) {
         if (entriesByType.size() != 0) {
             stringBuilder.append(generateTypeHeading(entriesByType)).append("\n");
-            stringBuilder = generateTypeBody(stringBuilder, entriesByType);
+            stringBuilder = generateTypeBody(stringBuilder, entriesByType).append("\n");
         }
 
         return stringBuilder;
@@ -56,14 +55,10 @@ public class ChangelogGenerator {
 
     private StringBuilder generateTypeBody(StringBuilder stringBuilder, List<ChangelogEntry> entriesByType) {
         for (ChangelogEntry entry : entriesByType) {
-            stringBuilder.append(generateEntry(entry)).append("\n");
+            stringBuilder.append(new MdEntry(entry).toMarkdown()).append("\n");
         }
 
         return stringBuilder;
-    }
-
-    private UnorderedListItem generateEntry(ChangelogEntry entry) {
-        return new UnorderedListItem(entry.getTitle());
     }
 
     private Heading generateTypeHeading(List<ChangelogEntry> entriesByType) {
@@ -84,15 +79,18 @@ public class ChangelogGenerator {
                 .collect(Collectors.toList());
     }
 
-    public Text generateHeader(String header) {
+    private Object generateHeader(String header) {
+        if (StringUtils.isBlank(header)) {
+            return StringUtils.EMPTY;
+        }
         return new Text(header);
     }
 
-    public Heading generateVersionHeading(ChangelogVersion version) {
-        return new Heading(version.getVersion() + generateVersionDate(version.getReleaseDateTime()), 2);
+    private Heading generateVersionHeading(ChangelogVersion version) {
+        return new Heading(String.format("[%s] - %s", version.getVersion(), generateVersionDate(version.getReleaseDateTime())), 2);
     }
 
-    public String generateVersionDate(OffsetDateTime dateTime) {
+    private String generateVersionDate(OffsetDateTime dateTime) {
         if (dateTime == null) {
             return StringUtils.EMPTY;
         }

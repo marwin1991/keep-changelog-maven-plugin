@@ -16,10 +16,10 @@ import java.util.List;
 public class ChangelogEntry {
 
     private String title;
-    private List<Author> author;
+    private List<Author> authors;
     private String mergeRequest;
-    private String issue;
-    private List<Link> links;
+    private List<String> issues;
+    private List<ChangelogLink> links;
     private ChangeLogEntryType type;
     private String versionRecommendations;
     private List<Configuration> configuration;

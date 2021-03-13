@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Link {
+public class ChangelogLink {
 
     private String name;
     private String url;
