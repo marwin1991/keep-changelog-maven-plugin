@@ -1,9 +1,6 @@
 package com.github.marwin1991.keep_changelog.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -14,6 +11,7 @@ import java.util.List;
 public class Changelog {
 
     private String header;
+    @Singular
     private List<ChangelogVersion> versions;
 
 }
