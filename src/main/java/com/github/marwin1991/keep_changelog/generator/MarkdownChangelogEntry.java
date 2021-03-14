@@ -3,7 +3,6 @@ package com.github.marwin1991.keep_changelog.generator;
 import com.github.marwin1991.keep_changelog.yaml.model.Author;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogLink;
-import net.steppschuh.markdowngenerator.MarkdownElement;
 import net.steppschuh.markdowngenerator.link.Link;
 import net.steppschuh.markdowngenerator.list.UnorderedListItem;
 import org.apache.commons.lang3.StringUtils;
@@ -12,7 +11,8 @@ import org.apache.commons.text.StringSubstitutor;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MarkdownChangelogEntry {
+public class MarkdownChangelogEntry implements Markdown {
+
     private static final String entryFormat = "${title} ${merge_request} ${issues} ${links} ${authors}";
     private static final String mergeRequestFormat = "!${merge_request}";
     private static final String issueFormat = "#${issue}";
@@ -24,8 +24,9 @@ public class MarkdownChangelogEntry {
         this.entry = entry;
     }
 
-    public MarkdownElement toMarkdown() {
-        return new UnorderedListItem(getEntry());
+    @Override
+    public String toMarkdown() {
+        return new UnorderedListItem(getEntry()).toString();
     }
 
     private String getEntry() {

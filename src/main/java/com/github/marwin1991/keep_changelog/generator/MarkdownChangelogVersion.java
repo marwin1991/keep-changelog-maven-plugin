@@ -1,6 +1,7 @@
 package com.github.marwin1991.keep_changelog.generator;
 
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;
+import com.github.marwin1991.keep_changelog.yaml.model.ChangeLogEntryType;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.model.Configuration;
 import net.steppschuh.markdowngenerator.list.UnorderedList;
@@ -11,12 +12,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringSubstitutor;
 
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class MarkdownChangelogVersion {
+public class MarkdownChangelogVersion implements Markdown {
 
     private static final String versionFormat = "[${version}] - ${releaseData}";
 
@@ -26,6 +24,7 @@ public class MarkdownChangelogVersion {
         this.changelogVersion = changelogVersion;
     }
 
+    @Override
     public String toMarkdown() {
         return getVersion();
     }
@@ -35,8 +34,9 @@ public class MarkdownChangelogVersion {
         stringBuilder.append(getVersionHeading()).append("\n");
         stringBuilder.append(getRecommendations());
 
-        //TODO types and entries
-
+        for (ChangeLogEntryType type : ChangeLogEntryType.values()) {
+            stringBuilder.append(new MarkdownChangeLogEntryType(type, changelogVersion.getEntries()).toMarkdown());
+        }
         stringBuilder.append(getConfiguration());
         return stringBuilder.toString();
     }
@@ -82,7 +82,7 @@ public class MarkdownChangelogVersion {
             configurations.addAll(entry.getConfiguration());
         }
 
-        //sort by types, then action then key
+        Collections.sort(configurations);
 
         if (configurations.size() != 0) {
             return new Heading("Configuration changes", 3) + "\n" + getConfigurationTable(configurations) + "\n";

@@ -19,4 +19,24 @@ configuration: # information about changes in available application configuratio
     default_value: "true" #always string
     description: Enables displying feature name
     type: database parameter
+  - action: update # [add/update/delete]
+    key: aaa.some.value
+    default_value: "true" #always string
+    description: Enables displying feature name
+    type: database parameter
+  - action: delete # [add/update/delete]
+    key: aaa.some.value
+    default_value: "true" #always string
+    description: Enables displying feature name
+    type: database parameter
+  - action: add # [add/update/delete]
+    key: aaa.some.value
+    default_value: "true" #always string
+    description: Enables displying feature name
+    type: database parameter
+  - action: add # [add/update/delete]
+    key: aaa.some.value
+    default_value: "true" #always string
+    description: Enables displying feature name
+    type: a docker-compose
 
