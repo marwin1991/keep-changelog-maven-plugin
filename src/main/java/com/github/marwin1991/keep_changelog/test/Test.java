@@ -1,6 +1,6 @@
 package com.github.marwin1991.keep_changelog.test;
 
-import com.github.marwin1991.keep_changelog.generator.MarkdownChangelog;
+import com.github.marwin1991.keep_changelog.markdown.MarkdownChangelog;
 import com.github.marwin1991.keep_changelog.model.Changelog;
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;

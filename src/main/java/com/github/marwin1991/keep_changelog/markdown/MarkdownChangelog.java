@@ -1,4 +1,4 @@
-package com.github.marwin1991.keep_changelog.generator;
+package com.github.marwin1991.keep_changelog.markdown;
 
 import com.github.marwin1991.keep_changelog.model.Changelog;
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;

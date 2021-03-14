@@ -15,8 +15,4 @@ public class ChangelogEntryParser {
         Yaml yaml = new Yaml(new AnnotationAwareConstructor(ChangelogEntry.class));
         return yaml.load(new FileInputStream(file));
     }
-
-    public static void main(String[] args) {
-        getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task.yml"));
-    }
 }
