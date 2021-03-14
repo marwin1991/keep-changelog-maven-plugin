@@ -15,9 +15,14 @@ import org.apache.maven.project.MavenProject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.NONE)
@@ -48,22 +53,33 @@ public class GenerateChangelogMojo extends AbstractMojo {
         Changelog.ChangelogBuilder changelogBuilder = Changelog.builder();
 
         changelogBuilder.header(header);
+        List<String> archive = new LinkedList<>();
 
-        for (File version : changelogDirectory.listFiles()) {
-            changelogBuilder.version(ChangelogVersion.builder()
-                    .version(version.getName().replace("v", ""))
-                    //used to skip "v" from directories names
-                    // we can use "(?!\.)(\d+(\.\d+)+)([-.][A-Z]+)?(?![\d.])$" to get version and skipp all letters before version number
-                    // but we have to make exception for "unreleased" string as it is not matching this regexp
-                    .entries(getEntries(version))
-                    .build());
+        for (File file : changelogDirectory.listFiles()) {
+            if (file.isDirectory()) {
+                changelogBuilder.version(ChangelogVersion.builder()
+                        .version(file.getName().replace("v", ""))
+                        //used to skip "v" from directories names
+                        // we can use "(?!\.)(\d+(\.\d+)+)([-.][A-Z]+)?(?![\d.])$" to get version and skipp all letters before version number
+                        // but we have to make exception for "unreleased" string as it is not matching this regexp
+                        .entries(getEntries(file))
+                        .build());
+            } else if (file.getName().startsWith("archive")) { // TODO extract to parameter
+                try {
+                    archive.addAll(Files.readAllLines(file.toPath(), StandardCharsets.UTF_8));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    //TODO
+                }
+            }
         }
 
         MarkdownChangelog markdownChangelog = new MarkdownChangelog(changelogBuilder.build());
-        System.out.println(markdownChangelog.toMarkdown());
-
         try (PrintWriter out = new PrintWriter(finalChangelogName)) {
             out.println(markdownChangelog.toMarkdown());
+            for (String line : archive) {
+                out.println(line);
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             //TODO
