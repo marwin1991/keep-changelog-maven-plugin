@@ -16,7 +16,9 @@ import java.util.*;
 
 public class MarkdownChangelogVersion implements Markdown {
 
-    private static final String versionFormat = "[${version}] - ${releaseData}";
+    private static final String versionHeaderFormat = "[${version}]${releaseData}";
+    private static final String releaseDatePrefix = " - ";
+    private static final String releaseDateFormat = "yyyy-MM-dd";
 
     private final ChangelogVersion changelogVersion;
 
@@ -48,7 +50,7 @@ public class MarkdownChangelogVersion implements Markdown {
         valuesMap.put("releaseData", getVersionDate());
 
         StringSubstitutor sub = new StringSubstitutor(valuesMap);
-        return new Heading(sub.replace(versionFormat), 2);
+        return new Heading(sub.replace(versionHeaderFormat), 2);
     }
 
     private String getVersionDate() {
@@ -56,8 +58,8 @@ public class MarkdownChangelogVersion implements Markdown {
             return StringUtils.EMPTY;
         }
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        return formatter.format(changelogVersion.getReleaseDateTime());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(releaseDateFormat);
+        return releaseDatePrefix + formatter.format(changelogVersion.getReleaseDateTime());
     }
 
     private String getRecommendations() {
