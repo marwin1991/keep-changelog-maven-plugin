@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -63,6 +64,7 @@ public class GenerateChangelogMojo extends AbstractMojo {
                         // we can use "(?!\.)(\d+(\.\d+)+)([-.][A-Z]+)?(?![\d.])$" to get version and skipp all letters before version number
                         // but we have to make exception for "unreleased" string as it is not matching this regexp
                         .entries(getEntries(file))
+                        .releaseDateTime(getReleaseDate(file))
                         .build());
             } else if (file.getName().startsWith("archive")) { // TODO extract to parameter
                 try {
@@ -88,8 +90,16 @@ public class GenerateChangelogMojo extends AbstractMojo {
 
     private Collection<? extends ChangelogEntry> getEntries(File version) {
         return Arrays.stream(version.listFiles())
+                .filter(file -> file.getName().contains(".yml") || file.getName().contains(".yaml"))
                 .map(ChangelogEntryParser::getChangelogEntriesFromFile)
                 .collect(Collectors.toList());
+    }
+
+    private OffsetDateTime getReleaseDate(File version) {
+        return Arrays.stream(version.listFiles())
+                .filter(file -> file.getName().equals("release-date.txt"))
+                .map(ChangelogEntryParser::getReleaseDateFromFile)
+                .findFirst().orElse(null);
     }
 
 

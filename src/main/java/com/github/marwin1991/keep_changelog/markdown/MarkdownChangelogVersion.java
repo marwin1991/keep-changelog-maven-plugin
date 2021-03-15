@@ -18,7 +18,7 @@ public class MarkdownChangelogVersion implements Markdown {
 
     private static final String versionHeaderFormat = "[${version}]${releaseData}";
     private static final String releaseDatePrefix = " - ";
-    private static final String releaseDateFormat = "yyyy-MM-dd";
+    public static final String releaseDateFormat = "yyyy-MM-dd";
 
     private final ChangelogVersion changelogVersion;
 
