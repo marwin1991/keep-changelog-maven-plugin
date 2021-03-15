@@ -35,7 +35,7 @@ public class MarkdownChangeLogEntryType implements Markdown {
         }
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(getTypeHeading()).append("\n");
+        stringBuilder.append(getTypeHeading()).append("\n").append("\n");
 
         for (ChangelogEntry entry : entries) {
             stringBuilder.append(new MarkdownChangelogEntry(entry).toMarkdown()).append("\n");

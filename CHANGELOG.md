@@ -1,3 +1,4 @@
+
 [unreleased]
 ------------
 
@@ -17,8 +18,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -56,8 +56,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -95,8 +94,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -134,8 +132,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -173,8 +170,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -212,8 +208,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -251,8 +246,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -290,8 +284,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -329,8 +322,7 @@
 ### Removed (2 changes)
 
 - Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
-- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (
-  @marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
 
 ### Fixed (1 change)
 
@@ -348,6 +340,7 @@
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
 | database parameter | update | `aaa.some.value`           | `true`        | Enables displying feature name |
 | database parameter | delete | `aaa.some.value`           | `true`        | Enables displying feature name |
+
 
 [0.9.0]
 ------------

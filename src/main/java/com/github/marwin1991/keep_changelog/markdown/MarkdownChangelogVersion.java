@@ -33,7 +33,7 @@ public class MarkdownChangelogVersion implements Markdown {
 
     private String getVersion() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(getVersionHeading()).append("\n");
+        stringBuilder.append(getVersionHeading()).append("\n").append("\n");
         stringBuilder.append(getRecommendations());
 
         for (ChangeLogEntryType type : ChangeLogEntryType.values()) {
@@ -70,7 +70,7 @@ public class MarkdownChangelogVersion implements Markdown {
         }
 
         if (recommendations.size() != 0) {
-            return new Heading("Recommendations", 3) + "\n" + new UnorderedList<>(recommendations) + "\n\n";
+            return new Heading("Recommendations", 3) + "\n\n" + new UnorderedList<>(recommendations) + "\n\n";
         } else {
             return StringUtils.EMPTY;
         }
@@ -87,7 +87,7 @@ public class MarkdownChangelogVersion implements Markdown {
         Collections.sort(configurations);
 
         if (configurations.size() != 0) {
-            return new Heading("Configuration changes", 3) + "\n" + getConfigurationTable(configurations) + "\n";
+            return new Heading("Configuration changes", 3) + "\n\n" + getConfigurationTable(configurations) + "\n";
         } else {
             return StringUtils.EMPTY;
         }
