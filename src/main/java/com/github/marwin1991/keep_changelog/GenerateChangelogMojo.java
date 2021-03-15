@@ -20,10 +20,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.time.OffsetDateTime;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.NONE)
@@ -76,7 +73,12 @@ public class GenerateChangelogMojo extends AbstractMojo {
             }
         }
 
-        MarkdownChangelog markdownChangelog = new MarkdownChangelog(changelogBuilder.build());
+        Changelog changelog = changelogBuilder.build();
+        List<ChangelogVersion> versions = new LinkedList<>(changelog.getVersions());
+        versions.sort(Collections.reverseOrder());
+        changelog.setVersions(versions);
+
+        MarkdownChangelog markdownChangelog = new MarkdownChangelog(changelog);
         try (PrintWriter out = new PrintWriter(finalChangelogName)) {
             out.println(markdownChangelog.toMarkdown());
             for (String line : archive) {
