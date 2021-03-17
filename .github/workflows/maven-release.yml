@@ -1,0 +1,16 @@
+
+
+name: Maven Release
+
+on:
+  push:
+    branches: [ release ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Java Maven release
+        uses: qcastel/github-actions-maven-release@v1.12.12
+        with:
+          access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
