@@ -14,3 +14,4 @@ jobs:
         uses: qcastel/github-actions-maven-release@v1.12.12
         with:
           access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          maven-options: "-DbranchName=release"
