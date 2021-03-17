@@ -9,6 +9,9 @@
     <packaging>maven-plugin</packaging>
     <version>0.1.0</version>
 
+    <name>keep-changelog-maven-plugin</name>
+    <description>Maven plugin to generate CHANGELOG.md based on YAML files, which are representing single entry in changelog.</description>
+    <url>https://github.com/marwin1991/keep-changelog-maven-plugin</url>
 
     <licenses>
         <license>
