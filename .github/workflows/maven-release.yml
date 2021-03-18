@@ -10,9 +10,14 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Java Maven release
         uses: qcastel/github-actions-maven-release@v1.12.12
         with:
-          access-token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          access-token: ${{ secrets.GITHUB_TOKEN }}
           release-branch-name: "release"
           version-minor: true
+          skip-perform: true
+        env:
+          JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
