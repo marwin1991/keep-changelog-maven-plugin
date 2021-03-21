@@ -7,9 +7,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ConfigurationAction {
 
-    ADD("add"),
-    UPDATE("update"),
-    DELETE("delete");
+    ADD("add", "Added"),
+    UPDATE("update", "Updated"),
+    DELETE("delete", "Deleted");
 
     private final String action;
+    private final String displayText;
 }
