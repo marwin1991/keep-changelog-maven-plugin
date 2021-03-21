@@ -29,6 +29,11 @@ public class MarkdownChangelogEntry implements Markdown {
         return new UnorderedListItem(getEntry()).toString();
     }
 
+    @Override
+    public String toString() {
+        return toMarkdown();
+    }
+
     private String getEntry() {
         Map<String, String> valuesMap = new HashMap<>();
         valuesMap.put("title", entry.getTitle());

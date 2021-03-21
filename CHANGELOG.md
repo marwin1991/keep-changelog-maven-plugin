@@ -1,8 +1,7 @@
-
 [unreleased]
 ------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2
@@ -28,19 +27,15 @@
 
 | Type               | Action | Key                        | Default Value | Description                    |
 | ------------------ | ------ | -------------------------- | ------------- | ------------------------------ |
-| a docker-compose   | add    | `aaa.some.value`           | `true`        | Enables displying feature name |
-| database parameter | add    | `aaa.some.value`           | `true`        | Enables displying feature name |
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
-| database parameter | update | `aaa.some.value`           | `true`        | Enables displying feature name |
-| database parameter | delete | `aaa.some.value`           | `true`        | Enables displying feature name |
 
 [1.1.0] - 2021-03-03
 --------------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2
@@ -78,7 +73,7 @@
 [1.0.11.1] - 2021-02-03
 -----------------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2
@@ -116,7 +111,7 @@
 [1.0.11] - 2021-01-26
 ---------------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2
@@ -154,7 +149,7 @@
 [1.0.10] - 2021-01-24
 ---------------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2
@@ -192,7 +187,7 @@
 [1.0.2.1] - 2021-01-20
 ----------------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2
@@ -230,7 +225,7 @@
 [1.0.2] - 2021-01-07
 --------------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2
@@ -268,7 +263,7 @@
 [1.0.1] - 2021-01-03
 --------------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2
@@ -306,7 +301,7 @@
 [1.0.0] - 2021-01-01
 --------------------
 
-### Recommendations
+### Important notes
 
 - Update style.css on server during instalation 1
 - configuration 2

@@ -18,23 +18,29 @@ public class MarkdownChangelog implements Markdown {
         return getChangelog();
     }
 
+    @Override
+    public String toString() {
+        return toMarkdown();
+    }
+
+
     public String getChangelog() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(getHeader()).append("\n");
+        stringBuilder.append(getHeader());
 
         for (ChangelogVersion version : changelog.getVersions()) {
-            stringBuilder.append(new MarkdownChangelogVersion(version).toMarkdown()).append("\n");
+            stringBuilder.append(new MarkdownChangelogVersion(version)).append("\n");
         }
 
         return stringBuilder.toString();
     }
 
 
-    private Object getHeader() {
+    private String getHeader() {
         if (StringUtils.isBlank(changelog.getHeader())) {
             return StringUtils.EMPTY;
         }
-        return new Text(changelog.getHeader());
+        return new Text(changelog.getHeader()) + "\n";
     }
 
 }

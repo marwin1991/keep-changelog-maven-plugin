@@ -80,7 +80,7 @@ public class GenerateChangelogMojo extends AbstractMojo {
 
         MarkdownChangelog markdownChangelog = new MarkdownChangelog(changelog);
         try (PrintWriter out = new PrintWriter(finalChangelogName)) {
-            out.println(markdownChangelog.toMarkdown());
+            out.println(markdownChangelog);
             for (String line : archive) {
                 out.println(line);
             }

@@ -47,6 +47,6 @@ public class Test {
                 .build();
 
         MarkdownChangelog markdownChangelog = new MarkdownChangelog(changelog);
-        System.out.println(markdownChangelog.toMarkdown());
+        System.out.println(markdownChangelog);
     }
 }

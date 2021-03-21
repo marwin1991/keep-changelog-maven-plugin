@@ -23,6 +23,12 @@ public class MarkdownChangeLogEntryType implements Markdown {
         return getType();
     }
 
+    @Override
+    public String toString() {
+        return toMarkdown();
+    }
+
+
     private List<ChangelogEntry> getEntriesForType(List<ChangelogEntry> entries, ChangeLogEntryType type) {
         return entries.stream()
                 .filter(changelogEntry -> type.equals(changelogEntry.getType()))
@@ -38,7 +44,7 @@ public class MarkdownChangeLogEntryType implements Markdown {
         stringBuilder.append(getTypeHeading()).append("\n").append("\n");
 
         for (ChangelogEntry entry : entries) {
-            stringBuilder.append(new MarkdownChangelogEntry(entry).toMarkdown()).append("\n");
+            stringBuilder.append(new MarkdownChangelogEntry(entry)).append("\n");
         }
 
         return stringBuilder.append("\n").toString();

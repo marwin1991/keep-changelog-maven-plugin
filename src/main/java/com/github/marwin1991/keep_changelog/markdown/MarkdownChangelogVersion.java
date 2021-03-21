@@ -31,15 +31,20 @@ public class MarkdownChangelogVersion implements Markdown {
         return getVersion();
     }
 
+    @Override
+    public String toString() {
+        return toMarkdown();
+    }
+
     private String getVersion() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(getVersionHeading()).append("\n").append("\n");
-        stringBuilder.append(getRecommendations());
+        stringBuilder.append(getImportantNotes());
 
         for (ChangeLogEntryType type : ChangeLogEntryType.values()) {
-            stringBuilder.append(new MarkdownChangeLogEntryType(type, changelogVersion.getEntries()).toMarkdown());
+            stringBuilder.append(new MarkdownChangeLogEntryType(type, changelogVersion.getEntries()));
         }
-        stringBuilder.append(getConfiguration());
+        stringBuilder.append(new MarkdownChangelogVersionConfiguration(changelogVersion));
         return stringBuilder.toString();
     }
 
@@ -62,50 +67,19 @@ public class MarkdownChangelogVersion implements Markdown {
         return releaseDatePrefix + formatter.format(changelogVersion.getReleaseDateTime());
     }
 
-    private String getRecommendations() {
-        List<String> recommendations = new LinkedList<>();
+    private String getImportantNotes() {
+        List<String> importantNotes = new LinkedList<>();
 
         for (ChangelogEntry entry : changelogVersion.getEntries()) {
-            recommendations.addAll(entry.getRecommendations());
+            if (entry.getImportantNotes() != null) {
+                importantNotes.addAll(entry.getImportantNotes());
+            }
         }
 
-        if (recommendations.size() != 0) {
-            return new Heading("Recommendations", 3) + "\n\n" + new UnorderedList<>(recommendations) + "\n\n";
+        if (importantNotes.size() != 0) {
+            return new Heading("Important notes", 3) + "\n\n" + new UnorderedList<>(importantNotes) + "\n\n";
         } else {
             return StringUtils.EMPTY;
         }
-    }
-
-
-    private String getConfiguration() {
-        List<Configuration> configurations = new LinkedList<>();
-
-        for (ChangelogEntry entry : changelogVersion.getEntries()) {
-            configurations.addAll(entry.getConfiguration());
-        }
-
-        Collections.sort(configurations);
-
-        if (configurations.size() != 0) {
-            return new Heading("Configuration changes", 3) + "\n\n" + getConfigurationTable(configurations) + "\n";
-        } else {
-            return StringUtils.EMPTY;
-        }
-    }
-
-    private Table getConfigurationTable(List<Configuration> configurations) {
-        Table.Builder tableBuilder = new Table.Builder()
-                .addRow("Type", "Action", "Key", "Default Value", "Description");
-
-        for (Configuration configuration : configurations) {
-            tableBuilder.addRow(
-                    configuration.getType(),
-                    configuration.getAction().getAction(),
-                    new Code(configuration.getKey()),
-                    new Code(configuration.getDefaultValue()),
-                    configuration.getDescription());
-        }
-
-        return tableBuilder.build();
     }
 }
