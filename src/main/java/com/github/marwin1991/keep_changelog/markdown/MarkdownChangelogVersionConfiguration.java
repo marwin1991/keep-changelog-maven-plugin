@@ -67,11 +67,9 @@ public class MarkdownChangelogVersionConfiguration implements Markdown {
 
         for (Configuration configuration : configurations) {
             MarkdownListInTable listInTable = new MarkdownListInTable();
-            listInTable.add(configuration.getAction().getDisplayText() + new Code(configuration.getKey()));
-            listInTable.add("Default value: " + new Code(configuration.getDefaultValue()));
-            listInTable.add(configuration.getDescription());
+            listInTable.add(configuration.getAction().getDisplayText() + new Code(configuration.getKey()) + " with default value: " + new Code(configuration.getDefaultValue()));
+            listInTable.add("Description: " + configuration.getDescription());
             listInTable.add(configuration.getMoreInfo());
-
 
             tableBuilder.addRow(listInTable);
         }
