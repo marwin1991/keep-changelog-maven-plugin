@@ -1,6 +1,8 @@
 package com.github.marwin1991.keep_changelog.yaml.model;
 
+import com.github.marwin1991.keep_changelog.logger.Logger;
 import com.github.marwin1991.keep_changelog.yaml.converter.ConfigurationActionConverter;
+import de.beosign.snakeyamlanno.property.YamlAnySetter;
 import de.beosign.snakeyamlanno.property.YamlProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,6 +31,11 @@ public class Configuration implements Comparable<Configuration> {
     @YamlProperty(key = "default_value")
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    @YamlAnySetter
+    public void anySetter(String key, Object value) {
+        Logger.getLogger().warn("Unknown property: " + key + " with value " + value);
     }
 
     @Override
