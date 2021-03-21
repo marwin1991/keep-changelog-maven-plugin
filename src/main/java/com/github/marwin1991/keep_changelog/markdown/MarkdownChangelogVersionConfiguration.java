@@ -38,7 +38,7 @@ public class MarkdownChangelogVersionConfiguration implements Markdown {
             StringBuilder markdownConfiguration = new StringBuilder(new Heading("Configuration changes", 3) + "\n\n");
 
             for(String type: types) {
-                markdownConfiguration.append(getConfigurationTable(configurations, type)).append("\n");
+                markdownConfiguration.append(getConfigurationTable(configurations, type)).append("\n\n");
             }
 
             return markdownConfiguration.toString();
@@ -63,14 +63,17 @@ public class MarkdownChangelogVersionConfiguration implements Markdown {
     }
 
     private Table getConfigurationTable(List<Configuration> configurations, String type) {
-        Table.Builder tableBuilder = new Table.Builder()
-                .addRow("Type: " + type);
+        Table.Builder tableBuilder = new Table.Builder().addRow("Type: " + type);
 
         for (Configuration configuration : configurations) {
-            tableBuilder.addRow(
-                    new UnorderedListItem(configuration.getAction().getDisplayText() + new Code(configuration.getKey())).toString() +
-                            new UnorderedListItem(        " with default value: " + new Code(configuration.getDefaultValue())).toString() +
-                    configuration.getDescription());
+            MarkdownListInTable listInTable = new MarkdownListInTable();
+            listInTable.add(configuration.getAction().getDisplayText() + new Code(configuration.getKey()));
+            listInTable.add("Default value: " + new Code(configuration.getDefaultValue()));
+            listInTable.add(configuration.getDescription());
+            listInTable.add(configuration.getMoreInfo());
+
+
+            tableBuilder.addRow(listInTable);
         }
 
         return tableBuilder.build();

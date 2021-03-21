@@ -17,11 +17,12 @@ import java.util.Comparator;
 @AllArgsConstructor
 public class Configuration implements Comparable<Configuration> {
 
+    private String type;
     private ConfigurationAction action;
     private String key;
     private String defaultValue;
     private String description;
-    private String type;
+    private String moreInfo;
 
     @YamlProperty(key = "action", converter = ConfigurationActionConverter.class)
     public void setAction(ConfigurationAction action) {
@@ -31,6 +32,11 @@ public class Configuration implements Comparable<Configuration> {
     @YamlProperty(key = "default_value")
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    @YamlProperty(key = "more_info")
+    public void setMoreInfo(String moreInfo) {
+        this.moreInfo = moreInfo;
     }
 
     @YamlAnySetter
