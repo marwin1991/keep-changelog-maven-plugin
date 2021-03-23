@@ -4,12 +4,12 @@
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -17,8 +17,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
@@ -28,26 +28,22 @@
 
 | Type               | Action | Key                        | Default Value | Description                    |
 | ------------------ | ------ | -------------------------- | ------------- | ------------------------------ |
-| a docker-compose   | add    | `aaa.some.value`           | `true`        | Enables displying feature name |
-| database parameter | add    | `aaa.some.value`           | `true`        | Enables displying feature name |
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
 | database parameter | add    | `simpleparam.name.enabled` | `true`        | Enables displying feature name |
-| database parameter | update | `aaa.some.value`           | `true`        | Enables displying feature name |
-| database parameter | delete | `aaa.some.value`           | `true`        | Enables displying feature name |
 
 [1.1.0] - 2021-03-03
 --------------------
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -55,8 +51,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
@@ -80,12 +76,12 @@
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -93,8 +89,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
@@ -118,12 +114,12 @@
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -131,8 +127,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
@@ -156,12 +152,12 @@
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -169,8 +165,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
@@ -194,12 +190,12 @@
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -207,8 +203,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
@@ -232,12 +228,12 @@
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -245,8 +241,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
@@ -270,12 +266,12 @@
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -283,8 +279,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
@@ -308,12 +304,12 @@
 
 ### Recommendations
 
+- some realy important recomendation
+- Update style.css on server during instalation
+- Update style.css on server during instalation
 - Update style.css on server during instalation 1
 - configuration 2
 - configuration 3
-- Update style.css on server during instalation
-- Update style.css on server during instalation
-- some realy important recomendation
 
 ### Added (1 change)
 
@@ -321,8 +317,8 @@
 
 ### Removed (2 changes)
 
-- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 - Test title !1 #1 #2 [TASK_NUMBER](https://www.google.pl) [other link](https://www.google.pl) (@marwin1991) ([Piotr](https://github.com/marwin1991) @marwin1991)
+- Test title !1 #1 [TASK_NUMBER](https://www.google.pl) (Piotr)
 
 ### Fixed (1 change)
 
