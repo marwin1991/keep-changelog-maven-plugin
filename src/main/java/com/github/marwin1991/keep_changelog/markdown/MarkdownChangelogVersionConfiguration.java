@@ -51,7 +51,9 @@ public class MarkdownChangelogVersionConfiguration implements Markdown {
         List<Configuration> configurations = new LinkedList<>();
 
         for (ChangelogEntry entry : changelogVersion.getEntries()) {
-            configurations.addAll(entry.getConfiguration());
+            if(entry.getConfiguration() != null) {
+                configurations.addAll(entry.getConfiguration());
+            }
         }
 
         Collections.sort(configurations);

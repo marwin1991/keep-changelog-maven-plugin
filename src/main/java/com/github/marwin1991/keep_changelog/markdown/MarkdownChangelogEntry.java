@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class MarkdownChangelogEntry implements Markdown {
 
-    private static final String entryFormat = "${title} ${merge_request} ${issues} ${links} ${authors}";
+    private static final String entryFormat = "${title} ${merge_request_format} ${issues} ${links} ${authors}";
     private static final String mergeRequestFormat = "!${merge_request}";
     private static final String issueFormat = "#${issue}";
     private static final String authorFormat = "(${author})";
@@ -37,7 +37,7 @@ public class MarkdownChangelogEntry implements Markdown {
     private String getEntry() {
         Map<String, String> valuesMap = new HashMap<>();
         valuesMap.put("title", entry.getTitle());
-        valuesMap.put("merge_request", getMergeRequest());
+        valuesMap.put("merge_request_format", getMergeRequest());
         valuesMap.put("issues", getIssues());
         valuesMap.put("links", getLinks());
         valuesMap.put("authors", getAuthors());
