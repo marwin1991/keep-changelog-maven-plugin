@@ -82,3 +82,5 @@ TODO
 
 
 
+Requirements:
+- set up the JAVA_HOME system variable
