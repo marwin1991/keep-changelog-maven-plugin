@@ -32,7 +32,7 @@ public class GenerateChangelogMojo extends AbstractMojo {
     @Parameter(defaultValue = "changelog", property = "yamlFilesDirectory")
     private String yamlFilesDirectory;
 
-    @Parameter(defaultValue = "CHANGELOG.md", property = "finalChangelogName")
+    @Parameter(defaultValue = "src/CHANGELOG.md", property = "finalChangelogName")
     private String finalChangelogName;
 
     @Parameter(defaultValue = "${project}", required = true, readonly = true)
