@@ -73,6 +73,5 @@ TODO
 - add command to create release with a version from pom.xml as directory name and release-date.txt file
 - add command to create archive-X.md from selected directory
 - add tests
-- add issue to snakeyaml-anno to include specific sl4j lib
 - add javadocs
 - support  `unreleased*` directories names like `unreleased-1.1`
