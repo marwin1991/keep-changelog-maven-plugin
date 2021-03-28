@@ -29,10 +29,10 @@ public class GenerateChangelogMojo extends AbstractMojo {
     @Parameter(defaultValue = "", property = "header")
     private String header;
 
-    @Parameter(defaultValue = "changelog", property = "changelogDirectory")
-    private String changelogDirectoryName;
+    @Parameter(defaultValue = "changelog", property = "yamlFilesDirectory")
+    private String yamlFilesDirectory;
 
-    @Parameter(defaultValue = "CHANGELOG.md", property = "finalChangelogName")
+    @Parameter(defaultValue = "src/CHANGELOG.md", property = "finalChangelogName")
     private String finalChangelogName;
 
     @Parameter(defaultValue = "${project}", required = true, readonly = true)
@@ -40,11 +40,10 @@ public class GenerateChangelogMojo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        getLog().info("Started generating " + finalChangelogName);
         File changelogDirectory = findChangelogDirectory(project.getFile().getParent());
-
         generate(changelogDirectory, finalChangelogName);
-
-        getLog().info("HELLO WORLD");
+        getLog().info("Generating " + finalChangelogName + " successful");
     }
 
     public void generate(File changelogDirectory, String finalChangelogName) {
@@ -106,17 +105,17 @@ public class GenerateChangelogMojo extends AbstractMojo {
 
 
     private File findChangelogDirectory(String directoryPath) {
-        File changelogDirectory = new File(directoryPath + "/" + changelogDirectoryName);
-        if (!changelogDirectory.exists()) {
+        File changelogDir = new File(directoryPath + "/" + yamlFilesDirectory);
+        if (!changelogDir.exists()) {
             getLog().error("There is no 'changelog' directory in this project !!!");
             throw new RuntimeException("No changelog directory");
         }
 
-        if (!changelogDirectory.isDirectory()) {
+        if (!changelogDir.isDirectory()) {
             getLog().error("File 'changelog' is not a directory !!!");
             throw new RuntimeException("File changelog is not a directory");
         }
 
-        return changelogDirectory;
+        return changelogDir;
     }
 }
