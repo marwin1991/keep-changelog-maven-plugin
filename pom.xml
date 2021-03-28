@@ -36,6 +36,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
 
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <lombok.version>1.18.18</lombok.version>
         <lombok-maven.version>1.18.18.0</lombok-maven.version>
         <maven-plugin-api.version>3.6.3</maven-plugin-api.version>
@@ -44,7 +46,8 @@
 
         <maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
         <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
-        <snakeyaml.version>1.26</snakeyaml.version>
+
+        <snakeyaml-anno.version>1.2.0</snakeyaml-anno.version>
     </properties>
 
     <distributionManagement>
@@ -100,39 +103,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>${snakeyaml.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.github.beosign</groupId>
             <artifactId>snakeyaml-anno</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.30</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.30</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.9.4</version>
+            <version>${snakeyaml-anno.version}</version>
         </dependency>
 
         <dependency>
