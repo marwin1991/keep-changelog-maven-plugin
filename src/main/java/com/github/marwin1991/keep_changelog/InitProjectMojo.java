@@ -8,7 +8,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 import java.io.File;
 import java.io.IOException;
 
-@Mojo(name = "initProject", defaultPhase = LifecyclePhase.NONE)
+@Mojo(name = "init", defaultPhase = LifecyclePhase.NONE)
 public class InitProjectMojo extends AbstractMojo {
 
     @Parameter(defaultValue = "CHANGELOG.md", property = "changelogDirectory")
