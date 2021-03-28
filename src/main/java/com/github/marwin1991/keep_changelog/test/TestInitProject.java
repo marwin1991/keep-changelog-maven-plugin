@@ -6,6 +6,6 @@ public class TestInitProject {
 
     public static void main(String[] args) {
         new InitProjectMojo().generateChangelog("CHANGELOG.md");
-        new InitProjectMojo().generateChangelogDirUnreleasedDirGitKeep("changelog/unreleased/.gitkeep");
+        new InitProjectMojo().generateChangelogDirUnreleasedDirGitKeep("changelog/unreleased/");
     }
 }

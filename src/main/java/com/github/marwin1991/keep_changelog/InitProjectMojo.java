@@ -11,20 +11,23 @@ import java.io.IOException;
 @Mojo(name = "init", defaultPhase = LifecyclePhase.NONE)
 public class InitProjectMojo extends AbstractMojo {
 
-    @Parameter(defaultValue = "CHANGELOG.md", property = "changelogDirectory")
-    private String changelogDirectory;
+    private static final String GIT_KEEP = ".gitkeep";
 
-    @Parameter(defaultValue = "changelog/unreleased/.gitkeep", property = "gitkeepDirectory")
-    private String gitkeepDirectory;
+    @Parameter(defaultValue = "CHANGELOG.md", property = "finalChangelogName")
+    private String finalChangelogName;
 
-    @Parameter(defaultValue = "changelog", property = "changelogDirectory")
-    private String changelogDirectoryName;
+    @Parameter(defaultValue = "changelog", property = "yamlFilesDirectory")
+    private String yamlFilesDirectory;
+
+    @Parameter(defaultValue = "unreleased", property = "unreleasedVersionDirectory")
+    private String unreleasedVersionDirectory;
 
     @Override
     public void execute() {
-
-        generateChangelog(changelogDirectory);
-        generateChangelogDirUnreleasedDirGitKeep(gitkeepDirectory);
+        getLog().info("Initialize project for keep-changelog maven plugin");
+        generateChangelog(finalChangelogName);
+        generateChangelogDirUnreleasedDirGitKeep(yamlFilesDirectory + "/" + unreleasedVersionDirectory + "/");
+        getLog().info("Initialize project successful");
     }
 
     public void generateChangelog(String path) {
@@ -34,26 +37,24 @@ public class InitProjectMojo extends AbstractMojo {
             if (changelog.createNewFile()) {
                 getLog().info("Created: " + changelog.getName());
             } else {
-                getLog().error(changelog.getName() + " already exists.");
+                getLog().warn(changelog.getName() + " already exists.");
             }
         } catch (IOException e) {
             getLog().error("An error occurred while creating empty changelog.");
-            e.printStackTrace();
         }
     }
 
     public void generateChangelogDirUnreleasedDirGitKeep(String path) {
 
         try {
-            File gitkeep = new File(path);
-            if (gitkeep.createNewFile()) {
-                getLog().info("Created: " + gitkeep.getName());
+            File gitKeep = new File(path + GIT_KEEP);
+            if (gitKeep.createNewFile()) {
+                getLog().info("Created: " + gitKeep.getName());
             } else {
-                getLog().error(gitkeep.getName() + " already exists.");
+                getLog().warn(gitKeep.getName() + " already exists.");
             }
         } catch (IOException e) {
             getLog().error("An error occurred while creating empty .gitkeep.");
-            e.printStackTrace();
         }
     }
 

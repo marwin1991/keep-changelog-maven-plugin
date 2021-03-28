@@ -9,6 +9,6 @@ import java.io.File;
 public class TestGenerateChangelogMojo {
 
     public static void main(String[] args) throws MojoFailureException, MojoExecutionException {
-        new GenerateChangelogMojo().generate(new File("./changelog"), "src/CHANGELOG.md");
+        new GenerateChangelogMojo().generate(new File("./changelog"), "CHANGELOG.md");
     }
 }
