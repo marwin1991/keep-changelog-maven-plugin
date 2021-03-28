@@ -70,7 +70,6 @@ TODO
 
 ## TODO: 
 - update README to include all important aspects: first steps (add to pom.xml etc.), available commands
-- move current changelog directory to example
 - add command to create release with a version from pom.xml as directory name and release-date.txt file
 - add command to create archive-X.md from selected directory
 - add tests
