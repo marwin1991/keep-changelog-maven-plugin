@@ -69,7 +69,6 @@ TODO
 
 
 ## TODO: 
-- add generating changelog directory with .gitkepp and empty changelog file, if not exists with init command
 - update README to include all important aspects: first steps (add to pom.xml etc.), available commands
 - move current changelog directory to example
 - add command to create release with a version from pom.xml as directory name and release-date.txt file
@@ -78,9 +77,3 @@ TODO
 - add issue to snakeyaml-anno to include specific sl4j lib
 - add javadocs
 - support  `unreleased*` directories names like `unreleased-1.1`
-
-
-
-
-Requirements:
-- set up the JAVA_HOME system variable
