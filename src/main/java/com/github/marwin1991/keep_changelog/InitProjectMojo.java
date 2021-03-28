@@ -4,26 +4,27 @@ import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
-import org.apache.maven.project.MavenProject;
 
 import java.io.File;
 import java.io.IOException;
 
-@Mojo(name = "initGenerate", defaultPhase = LifecyclePhase.NONE)
+@Mojo(name = "initProject", defaultPhase = LifecyclePhase.NONE)
 public class InitProjectMojo extends AbstractMojo {
 
-    @Parameter(defaultValue = "CHANGELOG.md", property = "finalChangelogName")
-    private String finalChangelogName;
+    @Parameter(defaultValue = "CHANGELOG.md", property = "changelogDirectory")
+    private String changelogDirectory;
 
-    @Parameter(defaultValue = "${project}", required = true, readonly = true)
-    private MavenProject project;
+    @Parameter(defaultValue = "changelog/unreleased/.gitkeep", property = "gitkeepDirectory")
+    private String gitkeepDirectory;
+
+    @Parameter(defaultValue = "changelog", property = "changelogDirectory")
+    private String changelogDirectoryName;
 
     @Override
     public void execute() {
 
-        generateChangelog(finalChangelogName);
-
-        getLog().info("HELLO WORLD");
+        generateChangelog(changelogDirectory);
+        generateChangelogDirUnreleasedDirGitKeep(gitkeepDirectory);
     }
 
     public void generateChangelog(String path) {
@@ -31,27 +32,27 @@ public class InitProjectMojo extends AbstractMojo {
         try {
             File changelog = new File(path);
             if (changelog.createNewFile()) {
-                System.out.println("Created: " + changelog.getName());
+                getLog().info("Created: " + changelog.getName());
             } else {
-                System.out.println(changelog.getName() + " already exists.");
+                getLog().error(changelog.getName() + " already exists.");
             }
         } catch (IOException e) {
-            System.out.println("An error occurred while creating empty changelog.");
+            getLog().error("An error occurred while creating empty changelog.");
             e.printStackTrace();
         }
     }
 
-    public void generateGitkeep(String path) {
+    public void generateChangelogDirUnreleasedDirGitKeep(String path) {
 
         try {
             File gitkeep = new File(path);
             if (gitkeep.createNewFile()) {
-                System.out.println("Created: " + gitkeep.getName());
+                getLog().info("Created: " + gitkeep.getName());
             } else {
-                System.out.println(gitkeep.getName() + " already exists.");
+                getLog().error(gitkeep.getName() + " already exists.");
             }
         } catch (IOException e) {
-            System.out.println("An error occurred while creating empty .gitkeep.");
+            getLog().error("An error occurred while creating empty .gitkeep.");
             e.printStackTrace();
         }
     }

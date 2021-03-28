@@ -15,3 +15,5 @@ Usage:
 - add a directory to your `changelog` directory with name `unreleased`
 - add a file to your project with name `CHANGELOG.md`
 
+Requirements:
+- set up the JAVA_HOME system variable
