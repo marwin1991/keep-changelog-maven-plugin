@@ -43,10 +43,14 @@ public class MarkdownChangelogEntry implements Markdown {
         valuesMap.put("authors", getAuthors());
 
         StringSubstitutor sub = new StringSubstitutor(valuesMap);
-        return sub.replace(entryFormat);
+        return sub.replace(entryFormat).replaceAll("\\s{2,}", " ");
     }
 
     private String getMergeRequest() {
+        if (StringUtils.isBlank(entry.getMergeRequest())) {
+            return StringUtils.EMPTY;
+        }
+
         Map<String, String> valuesMap = new HashMap<>();
         valuesMap.put("merge_request", entry.getMergeRequest());
         StringSubstitutor sub = new StringSubstitutor(valuesMap);
