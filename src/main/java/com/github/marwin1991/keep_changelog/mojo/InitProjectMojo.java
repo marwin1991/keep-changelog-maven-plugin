@@ -1,4 +1,4 @@
-package com.github.marwin1991.keep_changelog;
+package com.github.marwin1991.keep_changelog.mojo;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.LifecyclePhase;

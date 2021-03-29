@@ -1,6 +1,6 @@
 package com.github.marwin1991.keep_changelog.test;
 
-import com.github.marwin1991.keep_changelog.GenerateChangelogMojo;
+import com.github.marwin1991.keep_changelog.mojo.GenerateChangelogMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 

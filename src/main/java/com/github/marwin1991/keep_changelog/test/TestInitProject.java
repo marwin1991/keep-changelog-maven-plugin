@@ -1,6 +1,6 @@
 package com.github.marwin1991.keep_changelog.test;
 
-import com.github.marwin1991.keep_changelog.InitProjectMojo;
+import com.github.marwin1991.keep_changelog.mojo.InitProjectMojo;
 
 public class TestInitProject {
 

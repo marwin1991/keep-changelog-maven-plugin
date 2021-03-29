@@ -1,4 +1,4 @@
-package com.github.marwin1991.keep_changelog;
+package com.github.marwin1991.keep_changelog.mojo;
 
 import com.github.marwin1991.keep_changelog.markdown.MarkdownChangelog;
 import com.github.marwin1991.keep_changelog.model.Changelog;
@@ -32,7 +32,7 @@ public class GenerateChangelogMojo extends AbstractMojo {
     @Parameter(defaultValue = "changelog", property = "yamlFilesDirectory")
     private String yamlFilesDirectory;
 
-    @Parameter(defaultValue = "src/CHANGELOG.md", property = "finalChangelogName")
+    @Parameter(defaultValue = "CHANGELOG.md", property = "finalChangelogName")
     private String finalChangelogName;
 
     @Parameter(defaultValue = "${project}", required = true, readonly = true)
