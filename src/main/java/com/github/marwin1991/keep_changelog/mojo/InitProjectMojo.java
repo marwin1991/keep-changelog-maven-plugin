@@ -11,7 +11,7 @@ import java.io.IOException;
 @Mojo(name = "init", defaultPhase = LifecyclePhase.NONE)
 public class InitProjectMojo extends AbstractMojo {
 
-    private static final String GIT_KEEP = ".gitkeep";
+    public static final String GIT_KEEP = ".gitkeep";
 
     @Parameter(defaultValue = "CHANGELOG.md", property = "finalChangelogName")
     private String finalChangelogName;
@@ -47,6 +47,17 @@ public class InitProjectMojo extends AbstractMojo {
     public void generateChangelogDirUnreleasedDirGitKeep(String path) {
 
         try {
+            File yamlFilesDirectory = new File(path);
+            if (!yamlFilesDirectory.exists()) {
+                if (yamlFilesDirectory.mkdir()) {
+                    getLog().info("Created: " + yamlFilesDirectory.getName());
+                } else {
+                    getLog().warn(yamlFilesDirectory.getName() + " cannot be created.");
+                }
+            } else {
+                getLog().warn(yamlFilesDirectory.getName() + " already exists.");
+            }
+
             File gitKeep = new File(path + GIT_KEEP);
             if (gitKeep.createNewFile()) {
                 getLog().info("Created: " + gitKeep.getName());
@@ -54,7 +65,7 @@ public class InitProjectMojo extends AbstractMojo {
                 getLog().warn(gitKeep.getName() + " already exists.");
             }
         } catch (IOException e) {
-            getLog().error("An error occurred while creating empty .gitkeep.");
+            getLog().error("An error occurred while creating empty .gitkeep.", e);
         }
     }
 

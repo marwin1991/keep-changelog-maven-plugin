@@ -26,6 +26,8 @@ import java.util.stream.Collectors;
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.NONE)
 public class GenerateChangelogMojo extends AbstractMojo {
 
+    public static final String RELEASE_DATE = "release-date.txt";
+
     @Parameter(defaultValue = "", property = "header")
     private String header;
 
@@ -40,8 +42,12 @@ public class GenerateChangelogMojo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        executeGenerate(finalChangelogName, project, yamlFilesDirectory);
+    }
+
+    public void executeGenerate(String finalChangelogName, MavenProject project, String yamlFilesDirectory) {
         getLog().info("Started generating " + finalChangelogName);
-        File changelogDirectory = findChangelogDirectory(project.getFile().getParent());
+        File changelogDirectory = findChangelogDirectory(project.getFile().getParent() + "/" + yamlFilesDirectory);
         generate(changelogDirectory, finalChangelogName);
         getLog().info("Generating " + finalChangelogName + " successful");
     }
@@ -98,22 +104,22 @@ public class GenerateChangelogMojo extends AbstractMojo {
 
     private OffsetDateTime getReleaseDate(File version) {
         return Arrays.stream(version.listFiles())
-                .filter(file -> file.getName().equals("release-date.txt"))
+                .filter(file -> file.getName().equals(RELEASE_DATE))
                 .map(ChangelogEntryParser::getReleaseDateFromFile)
                 .findFirst().orElse(null);
     }
 
 
     private File findChangelogDirectory(String directoryPath) {
-        File changelogDir = new File(directoryPath + "/" + yamlFilesDirectory);
+        File changelogDir = new File(directoryPath);
         if (!changelogDir.exists()) {
-            getLog().error("There is no 'changelog' directory in this project !!!");
+            getLog().error("There is no " + directoryPath + " directory in this project !!!");
             throw new RuntimeException("No changelog directory");
         }
 
         if (!changelogDir.isDirectory()) {
-            getLog().error("File 'changelog' is not a directory !!!");
-            throw new RuntimeException("File changelog is not a directory");
+            getLog().error("File " + directoryPath + " is not a directory !!!");
+            throw new RuntimeException("File " + directoryPath + " is not a directory");
         }
 
         return changelogDir;
