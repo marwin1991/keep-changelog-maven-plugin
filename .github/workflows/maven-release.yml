@@ -29,12 +29,15 @@ jobs:
       - name: Commit generated CHANGELOG
         run: git status && git add ./changelog/ &&  git commit -am "Generated CHANGELOG.md and prepare version for next release"
 
-      - name: Java Maven release
-        uses: qcastel/github-actions-maven-release@v1.12.12
-        with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          release-branch-name: "release"
-          version-minor: true
-          skip-perform: true
-        env:
-          JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
+      - name: Push generated CHANGELOG
+        run: git push origin release
+
+#      - name: Java Maven release
+#        uses: qcastel/github-actions-maven-release@v1.12.12
+#        with:
+#          access-token: ${{ secrets.GITHUB_TOKEN }}
+#          release-branch-name: "release"
+#          version-minor: true
+#          skip-perform: true
+#        env:
+#          JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
