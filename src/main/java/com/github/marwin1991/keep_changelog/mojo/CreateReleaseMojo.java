@@ -36,7 +36,7 @@ public class CreateReleaseMojo extends AbstractMojo {
         getLog().info("Begin preparation from new changelog release");
 
         String unreleasedDir = yamlFilesDirectory + "/" + unreleasedVersionDirectory;
-        String newDirName = yamlFilesDirectory + "/" + "v" + project.getVersion();
+        String newDirName = yamlFilesDirectory + "/" + "v" + project.getVersion().replace("-SNAPSHOT", "");
 
         addReleaseDate(unreleasedDir);
         removeGitKeep(unreleasedDir);
