@@ -23,6 +23,9 @@ jobs:
       - name: Release and Generate CHANGELOG
         run: mvn install && mvn keep-changelog:release
 
+      - name: Set up Git
+        run: git config --global user.name keep-changelog-bot &&  git config --global user.email keep-changelog-bot@github.com
+
       - name: Commit generated CHANGELOG
         run: git status && git add ./changelog/ &&  git commit -am "Generated CHANGELOG.md and prepare version for next release"
 
