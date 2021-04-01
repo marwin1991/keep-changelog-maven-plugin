@@ -18,9 +18,14 @@ jobs:
         with:
           java-version: 1.8
 
+      # mvn install is used to install this project as a
+      # plugin and the use it as plugin to create changelog
       - name: Release and Generate CHANGELOG
-        run: mvn install && mvn keep-changelog:release # mvn install is used to install this project as a
-        # plugin and the use it as plugin to create changelog
+        run: mvn install && mvn keep-changelog:release
+
+      - name: Commit generated CHANGELOG
+        run: git status && git add ./changelog/ &&  git commit -am "Generated CHANGELOG.md and prepare version for next release"
+
       - name: Java Maven release
         uses: qcastel/github-actions-maven-release@v1.12.12
         with:

@@ -27,9 +27,10 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git@github.com:marwin1991/keep-changelog-maven-plugin.git</connection>
-        <developerConnection>scm:git:ssh://github.com:marwin1991/keep-changelog-maven-plugin.git</developerConnection>
-        <url>https://github.com/marwin1991/keep-changelog-maven-plugin/tree/main</url>
+        <connection>scm:git:${project.scm.url}</connection>
+        <developerConnection>scm:git:${project.scm.url}</developerConnection>
+        <url>https://github.com/marwin1991/keep-changelog-maven-plugin.git</url>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
