@@ -31,7 +31,7 @@ Add a plugin to your `pom.xml`. For multi-module projects with one `CHANGELOG.md
             <plugin>
                 <groupId>io.github.marwin1991</groupId>
                 <artifactId>keep-changelog-maven-plugin</artifactId>
-                <version>0.1.0</version>
+                <version>0.2.0</version>
             </plugin>
         </plugins>
     </build>
