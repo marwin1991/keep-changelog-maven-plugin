@@ -1,10 +1,10 @@
 package com.github.marwin1991.keep_changelog.model;
 
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
-import com.github.marwin1991.keep_changelog.yaml.model.Configuration;
 import lombok.*;
 import org.apache.maven.artifact.versioning.ComparableVersion;
 
+import java.io.File;
 import java.time.OffsetDateTime;
 import java.util.Comparator;
 import java.util.List;
@@ -16,6 +16,7 @@ import java.util.List;
 public class ChangelogVersion implements Comparable<ChangelogVersion> {
 
     private String version;
+    private File versionDirectory;
     private OffsetDateTime releaseDateTime;
     @Singular
     private List<ChangelogEntry> entries;

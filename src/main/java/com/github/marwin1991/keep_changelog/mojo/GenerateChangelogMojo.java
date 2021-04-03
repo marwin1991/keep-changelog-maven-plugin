@@ -62,6 +62,7 @@ public class GenerateChangelogMojo extends AbstractMojo {
             if (file.isDirectory()) {
                 changelogBuilder.version(ChangelogVersion.builder()
                         .version(file.getName().replace("v", ""))
+                        .versionDirectory(file)
                         //used to skip "v" from directories names
                         // we can use "(?!\.)(\d+(\.\d+)+)([-.][A-Z]+)?(?![\d.])$" to get version and skipp all letters before version number
                         // but we have to make exception for "unreleased" string as it is not matching this regexp
@@ -84,11 +85,46 @@ public class GenerateChangelogMojo extends AbstractMojo {
         changelog.setVersions(versions);
 
         MarkdownChangelog markdownChangelog = new MarkdownChangelog(changelog);
+        String markdownChangelogContent = markdownChangelog.toMarkdown();
+
+        generateVersionSummaries(changelog, markdownChangelog);
+
         try (PrintWriter out = new PrintWriter(finalChangelogName)) {
-            out.println(markdownChangelog);
+            out.println(markdownChangelogContent);
             for (String line : archive) {
                 out.println(line);
             }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            //TODO
+        }
+    }
+
+    private void generateVersionSummaries(Changelog changelog, MarkdownChangelog markdownChangelog) {
+        for (ChangelogVersion version : changelog.getVersions()) {
+            if (!version.getVersion().equals("unreleased")) {
+                File versionSummaryFile = new File(version.getVersionDirectory() + "/version-summary.md");
+                try {
+                    if (versionSummaryFile.exists()) {
+                        saveVersionSummary(markdownChangelog, version, versionSummaryFile);
+                    } else {
+                        if (versionSummaryFile.createNewFile()) {
+                            saveVersionSummary(markdownChangelog, version, versionSummaryFile);
+                        } else {
+                            //TODO
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    //TODO
+                }
+            }
+        }
+    }
+
+    private void saveVersionSummary(MarkdownChangelog markdownChangelog, ChangelogVersion version, File versionSummaryFile) {
+        try (PrintWriter out = new PrintWriter(versionSummaryFile)) {
+            out.println(markdownChangelog.getVersionSummary(version.getVersion()));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             //TODO
