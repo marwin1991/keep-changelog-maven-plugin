@@ -47,6 +47,9 @@
         <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
 
         <snakeyaml-anno.version>1.2.0</snakeyaml-anno.version>
+
+        <!-- TESTS -->
+        <junit-jupiter.version>5.7.1</junit-jupiter.version>
     </properties>
 
     <distributionManagement>
@@ -117,6 +120,13 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
             <version>1.9</version>
+        </dependency>
+        <!-- TESTS -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
