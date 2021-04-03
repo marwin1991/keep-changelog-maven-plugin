@@ -31,7 +31,7 @@ Add a plugin to your `pom.xml`. For multi-module projects with one `CHANGELOG.md
             <plugin>
                 <groupId>io.github.marwin1991</groupId>
                 <artifactId>keep-changelog-maven-plugin</artifactId>
-                <version>0.2.0</version>
+                <version>0.3.0</version>
             </plugin>
         </plugins>
     </build>
@@ -50,27 +50,35 @@ After using `init` command or just creating `changelog/unreleased` directory you
 _In future there is a plan to support `unreleased*` directories names like `unreleased-1.1`_
 
 ### Adding new change
+
 TODO
 
 ### YAML format
+
 TODO
 
 ### Generating `CHANGELOG.md`
+
 TODO
 
-### `CHANGELOG.md` overview
+### `CHANGELOG.md` structure overview
+
+TODO
+
+### Versions summaries
+
 TODO
 
 ### Releasing the version
+
 TODO
 
 ### Archives
+
 TODO
 
+## TODO:
 
-## TODO: 
-- update README to include all important aspects: first steps (add to pom.xml etc.), available commands
-- add command to create release with a version from pom.xml as directory name and release-date.txt file
 - add command to create archive-X.md from selected directory
 - add tests
 - add javadocs
