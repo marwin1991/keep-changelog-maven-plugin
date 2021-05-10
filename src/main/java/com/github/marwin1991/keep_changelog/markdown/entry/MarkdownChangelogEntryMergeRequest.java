@@ -1,4 +1,4 @@
-package com.github.marwin1991.keep_changelog.markdown;
+package com.github.marwin1991.keep_changelog.markdown.entry;
 
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import org.apache.commons.lang3.StringUtils;
@@ -7,12 +7,15 @@ import org.apache.commons.text.StringSubstitutor;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MarkdownChangelogEntryMergeRequest extends MarkdownChangelogEntry {
+public class MarkdownChangelogEntryMergeRequest extends MarkdownChangelogEntryAbstract {
+
+    private static final String mergeRequestFormat = "!${merge_request}";
+
     public MarkdownChangelogEntryMergeRequest(ChangelogEntry entry) {
         super(entry);
     }
 
-    protected String getMergeRequest() {
+    public String getMergeRequest() {
         if (StringUtils.isBlank(entry.getMergeRequest())) {
             return StringUtils.EMPTY;
         }

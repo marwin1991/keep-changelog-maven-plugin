@@ -21,4 +21,5 @@ public class Author {
     public void anySetter(String key, Object value) {
         Logger.getLogger().warn("Unknown property: " + key + " with value " + value);
     }
+
 }

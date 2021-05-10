@@ -1,6 +1,6 @@
 package com.github.marwin1991.keep_changelog.markdown;
 
-import com.github.marwin1991.keep_changelog.model.Changelog;
+import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.model.*;
 import org.junit.jupiter.api.Test;
 

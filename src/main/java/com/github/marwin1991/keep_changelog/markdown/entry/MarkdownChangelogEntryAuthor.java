@@ -1,4 +1,4 @@
-package com.github.marwin1991.keep_changelog.markdown;
+package com.github.marwin1991.keep_changelog.markdown.entry;
 
 import com.github.marwin1991.keep_changelog.yaml.model.Author;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
@@ -9,12 +9,15 @@ import org.apache.commons.text.StringSubstitutor;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MarkdownChangelogEntryAuthor extends MarkdownChangelogEntry {
+public class MarkdownChangelogEntryAuthor extends MarkdownChangelogEntryAbstract {
+
+    private static final String authorFormat = "(${author})";
+
     public MarkdownChangelogEntryAuthor(ChangelogEntry entry) {
         super(entry);
     }
 
-    protected String getAuthors() {
+    public String getAuthors() {
         if (entry.getAuthors() == null || entry.getAuthors().size() == 0) {
             return StringUtils.EMPTY;
         }

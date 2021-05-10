@@ -1,5 +1,6 @@
 package com.github.marwin1991.keep_changelog.markdown;
 
+import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangelogEntryLinks;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogLink;
 import org.apache.commons.lang3.StringUtils;
