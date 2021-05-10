@@ -41,4 +41,7 @@ public class MarkdownChangelogEntry implements Markdown {
         StringSubstitutor sub = new StringSubstitutor(valuesMap);
         return sub.replace(entryFormat).replaceAll("\\s{2,}", " ");
     }
+
+
+
 }

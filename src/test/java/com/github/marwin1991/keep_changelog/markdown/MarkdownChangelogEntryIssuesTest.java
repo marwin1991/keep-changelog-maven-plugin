@@ -1,0 +1,54 @@
+package com.github.marwin1991.keep_changelog.markdown;
+
+import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class MarkdownChangelogEntryIssuesTest {
+
+    @Test
+    void getIssues_whenGivenNotEmptyListOfString_thenReturnFormattedString() {
+        // given
+        List<String> issues = List.of("issue1", "issue2", "issue3");
+        ChangelogEntry entry = ChangelogEntry.builder().issues(issues).build();
+        MarkdownChangelogEntryIssues markdownChangelogEntryIssues = new MarkdownChangelogEntryIssues(entry);
+        // when
+        String expected = "#issue1 #issue2 #issue3";
+        String result = markdownChangelogEntryIssues.getIssues();
+        // then
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @Disabled
+    void getIssues_whenGivenEmptyListOfString_thenReturn() {
+        // TODO What's expected when empty strings are given ?
+        // given
+        List<String> issues = List.of("", "", "");
+        ChangelogEntry entry = ChangelogEntry.builder().issues(issues).build();
+        MarkdownChangelogEntryIssues markdownChangelogEntryIssues = new MarkdownChangelogEntryIssues(entry);
+        // when
+        // String expected = "#issue1 #issue2 #issue3";
+        String result = markdownChangelogEntryIssues.getIssues();
+        System.out.println(result);
+        // then
+        // assertEquals(expected, result);
+    }
+
+    @Test
+    void getIssues__whenEmptyListOfString_thenReturnEmptyString() {
+        // given
+        List<String> issues = null;
+        ChangelogEntry entry = ChangelogEntry.builder().issues(issues).build();
+        MarkdownChangelogEntryIssues markdownChangelogEntryIssues = new MarkdownChangelogEntryIssues(entry);
+        // when
+        String result = markdownChangelogEntryIssues.getIssues();
+        // then
+        assertEquals(StringUtils.EMPTY, result);
+    }
+}
