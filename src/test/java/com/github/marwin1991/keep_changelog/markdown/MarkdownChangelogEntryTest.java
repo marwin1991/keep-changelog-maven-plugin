@@ -25,7 +25,6 @@ class MarkdownChangelogEntryTest {
                 .build();
 
         // when
-        // TODO Is that correct output for markdownChangelogEntry ?
         String expected = "- New Release !Merge Request #issue1 #issue2 #issue3 [google](google.com) [wp](wp.pl) ([Piotr](github.com/marwin1991) @Peter) ([Lukasz](github.com/luqkrzy) @Luq)";
         MarkdownChangelogEntry markdownChangelogEntry = new MarkdownChangelogEntry(changelogEntry);
         String result = markdownChangelogEntry.toMarkdown();

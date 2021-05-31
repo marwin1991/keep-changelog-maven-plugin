@@ -12,6 +12,7 @@ import java.util.Map;
 public class MarkdownChangelogEntryAuthor extends MarkdownChangelogEntryAbstract {
 
     private static final String authorFormat = "(${author})";
+    private static final String AT = "@";
 
     public MarkdownChangelogEntryAuthor(ChangelogEntry entry) {
         super(entry);
@@ -54,6 +55,6 @@ public class MarkdownChangelogEntryAuthor extends MarkdownChangelogEntryAbstract
             return StringUtils.EMPTY;
         }
 
-        return "@" + author.getNick();
+        return AT + author.getNick();
     }
 }
