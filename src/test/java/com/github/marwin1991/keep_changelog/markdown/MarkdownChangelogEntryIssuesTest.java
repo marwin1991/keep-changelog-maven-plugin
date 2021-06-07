@@ -7,15 +7,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MarkdownChangelogEntryIssuesTest {
 
     @Test
     void getIssues_whenGivenNotEmptyListOfString_thenReturnFormattedString() {
         // given
-        List<String> issues = List.of("issue1", "issue2", "issue3");
+        List<String> issues = Stream.of("issue1", "issue2", "issue3").collect(Collectors.toList());
         ChangelogEntry entry = ChangelogEntry.builder().issues(issues).build();
         MarkdownChangelogEntryIssues markdownChangelogEntryIssues = new MarkdownChangelogEntryIssues(entry);
         // when
@@ -28,17 +30,16 @@ class MarkdownChangelogEntryIssuesTest {
     @Test
     @Disabled
     void getIssues_whenGivenEmptyListOfString_thenReturn() {
-        // TODO What's expected when empty strings are given ?
         // given
-        List<String> issues = List.of("", "", "");
+        List<String> issues = Stream.of("", "", "").collect(Collectors.toList());
         ChangelogEntry entry = ChangelogEntry.builder().issues(issues).build();
         MarkdownChangelogEntryIssues markdownChangelogEntryIssues = new MarkdownChangelogEntryIssues(entry);
         // when
-        // String expected = "#issue1 #issue2 #issue3";
+        String expected = "#issue1 #issue2 #issue3";
         String result = markdownChangelogEntryIssues.getIssues();
         System.out.println(result);
         // then
-        // assertEquals(expected, result);
+        assertEquals(expected, result);
     }
 
     @Test

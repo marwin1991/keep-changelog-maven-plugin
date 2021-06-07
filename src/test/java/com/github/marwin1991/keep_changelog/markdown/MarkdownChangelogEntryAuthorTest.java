@@ -6,6 +6,8 @@ import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,7 +17,7 @@ class MarkdownChangelogEntryAuthorTest {
     @Test
     void getAuthors_whenGivenNotEmptyListOfAuthors_thenReturnFormattedString() {
         // given
-        List<Author> authors = List.of(new Author("Piotr", "Peter", "github.com/marwin1991"), new Author("Lukasz", "Luq", "github.com/luqkrzy"));
+        List<Author> authors = new ArrayList<>(Arrays.asList(new Author("Piotr", "Peter", "github.com/marwin1991"), new Author("Lukasz", "Luq", "github.com/luqkrzy")));
         ChangelogEntry entry = ChangelogEntry.builder().authors(authors).build();
         MarkdownChangelogEntryAuthor markdownChangelogEntryAuthor = new MarkdownChangelogEntryAuthor(entry);
         // when
