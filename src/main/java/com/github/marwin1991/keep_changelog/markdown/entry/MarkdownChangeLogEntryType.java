@@ -1,5 +1,7 @@
-package com.github.marwin1991.keep_changelog.markdown;
+package com.github.marwin1991.keep_changelog.markdown.entry;
 
+import com.github.marwin1991.keep_changelog.markdown.Markdown;
+import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangeLogEntryType;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import net.steppschuh.markdowngenerator.text.heading.Heading;

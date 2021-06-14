@@ -1,12 +1,10 @@
 package com.github.marwin1991.keep_changelog.markdown;
 
+import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangeLogEntryType;
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangeLogEntryType;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
-import com.github.marwin1991.keep_changelog.yaml.model.Configuration;
 import net.steppschuh.markdowngenerator.list.UnorderedList;
-import net.steppschuh.markdowngenerator.table.Table;
-import net.steppschuh.markdowngenerator.text.code.Code;
 import net.steppschuh.markdowngenerator.text.heading.Heading;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringSubstitutor;

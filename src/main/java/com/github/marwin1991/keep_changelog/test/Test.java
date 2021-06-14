@@ -16,7 +16,7 @@ public class Test {
         ChangelogEntry entry = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task.yml"));
         ChangelogEntry entry2 = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task2.yml"));
         ChangelogEntry entry3 = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task3.yml"));
-        ChangelogEntry entry4 = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task4.yml"));
+        // ChangelogEntry entry4 = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task4.yml"));
 
 
         Changelog changelog = Changelog.builder()
@@ -28,7 +28,7 @@ public class Test {
                         .entry(entry2)
                         .entry(entry3)
                         .entry(entry3)
-                        .entry(entry4)
+                        // .entry(entry4)
                         .build())
                 .version(ChangelogVersion.builder()
                         .version("1.0.1")
