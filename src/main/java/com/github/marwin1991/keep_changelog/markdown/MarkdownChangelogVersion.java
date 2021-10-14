@@ -1,6 +1,6 @@
 package com.github.marwin1991.keep_changelog.markdown;
 
-import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangeLogEntryType;
+import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangeLogEntries;
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangeLogEntryType;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
@@ -10,13 +10,17 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringSubstitutor;
 
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
-public class MarkdownChangelogVersion implements Markdown {
+import static com.github.marwin1991.keep_changelog.release_date.format.DateFormat.RELEASE_DATE_FORMAT;
+
+class MarkdownChangelogVersion implements Markdown {
 
     private static final String versionHeaderFormat = "[${version}]${releaseData}";
     private static final String releaseDatePrefix = " - ";
-    public static final String releaseDateFormat = "yyyy-MM-dd";
 
     private final ChangelogVersion changelogVersion;
 
@@ -40,7 +44,7 @@ public class MarkdownChangelogVersion implements Markdown {
         stringBuilder.append(getImportantNotes());
 
         for (ChangeLogEntryType type : ChangeLogEntryType.values()) {
-            stringBuilder.append(new MarkdownChangeLogEntryType(type, changelogVersion.getEntries()));
+            stringBuilder.append(new MarkdownChangeLogEntries(type, changelogVersion.getEntries()));
         }
         stringBuilder.append(new MarkdownChangelogVersionConfiguration(changelogVersion));
         return stringBuilder.toString();
@@ -61,7 +65,7 @@ public class MarkdownChangelogVersion implements Markdown {
             return StringUtils.EMPTY;
         }
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(releaseDateFormat);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(RELEASE_DATE_FORMAT);
         return releaseDatePrefix + formatter.format(changelogVersion.getReleaseDateTime());
     }
 

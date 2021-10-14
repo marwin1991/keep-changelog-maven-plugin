@@ -1,6 +1,6 @@
 package com.github.marwin1991.keep_changelog.markdown.entry;
 
-import com.github.marwin1991.keep_changelog.markdown.*;
+import com.github.marwin1991.keep_changelog.markdown.Markdown;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import net.steppschuh.markdowngenerator.list.UnorderedListItem;
 import org.apache.commons.text.StringSubstitutor;
@@ -8,7 +8,7 @@ import org.apache.commons.text.StringSubstitutor;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MarkdownChangelogEntry extends MarkdownChangelogEntryAbstract implements Markdown {
+class MarkdownChangelogEntry extends MarkdownChangelogEntryAbstract implements Markdown {
 
     private static final String entryFormat = "${title} ${merge_request_format} ${issues} ${links} ${authors}";
     private final MarkdownChangelogEntryMergeRequest markdownChangelogEntryMergeRequest;
@@ -45,7 +45,4 @@ public class MarkdownChangelogEntry extends MarkdownChangelogEntryAbstract imple
         StringSubstitutor sub = new StringSubstitutor(valuesMap);
         return sub.replace(entryFormat).replaceAll("\\s{2,}", " ");
     }
-
-
-
 }

@@ -5,7 +5,7 @@ import com.github.marwin1991.keep_changelog.yaml.model.ChangelogLink;
 import net.steppschuh.markdowngenerator.link.Link;
 import org.apache.commons.lang3.StringUtils;
 
-public class MarkdownChangelogEntryLinks extends MarkdownChangelogEntryAbstract {
+class MarkdownChangelogEntryLinks extends MarkdownChangelogEntryAbstract {
 
     public MarkdownChangelogEntryLinks(ChangelogEntry entry) {
         super(entry);

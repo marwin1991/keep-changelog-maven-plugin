@@ -1,6 +1,5 @@
-package com.github.marwin1991.keep_changelog.markdown;
+package com.github.marwin1991.keep_changelog.markdown.entry;
 
-import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.model.*;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MarkdownChangelogEntryTest {
 

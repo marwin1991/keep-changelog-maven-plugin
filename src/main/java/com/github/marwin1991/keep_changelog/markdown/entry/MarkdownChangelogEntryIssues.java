@@ -3,10 +3,11 @@ package com.github.marwin1991.keep_changelog.markdown.entry;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringSubstitutor;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class MarkdownChangelogEntryIssues extends MarkdownChangelogEntryAbstract {
+class MarkdownChangelogEntryIssues extends MarkdownChangelogEntryAbstract {
 
     private static final String issueFormat = "#${issue}";
 

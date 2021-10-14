@@ -9,7 +9,7 @@ import org.apache.commons.text.StringSubstitutor;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MarkdownChangelogEntryAuthor extends MarkdownChangelogEntryAbstract {
+class MarkdownChangelogEntryAuthor extends MarkdownChangelogEntryAbstract {
 
     private static final String authorFormat = "(${author})";
     private static final String AT = "@";

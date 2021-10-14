@@ -3,16 +3,18 @@ package com.github.marwin1991.keep_changelog.markdown;
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.model.Configuration;
-import net.steppschuh.markdowngenerator.list.UnorderedListItem;
 import net.steppschuh.markdowngenerator.table.Table;
 import net.steppschuh.markdowngenerator.text.code.Code;
 import net.steppschuh.markdowngenerator.text.heading.Heading;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
-public class MarkdownChangelogVersionConfiguration implements Markdown {
+class MarkdownChangelogVersionConfiguration implements Markdown {
 
     private final ChangelogVersion changelogVersion;
 

@@ -1,7 +1,6 @@
 package com.github.marwin1991.keep_changelog.markdown.entry;
 
 import com.github.marwin1991.keep_changelog.markdown.Markdown;
-import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangeLogEntryType;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import net.steppschuh.markdowngenerator.text.heading.Heading;
@@ -10,12 +9,12 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MarkdownChangeLogEntryType implements Markdown {
+public class MarkdownChangeLogEntries implements Markdown {
 
     private final ChangeLogEntryType type;
     private final List<ChangelogEntry> entries;
 
-    public MarkdownChangeLogEntryType(ChangeLogEntryType type, List<ChangelogEntry> entries) {
+    public MarkdownChangeLogEntries(ChangeLogEntryType type, List<ChangelogEntry> entries) {
         this.type = type;
         this.entries = getEntriesForType(entries, type);
     }

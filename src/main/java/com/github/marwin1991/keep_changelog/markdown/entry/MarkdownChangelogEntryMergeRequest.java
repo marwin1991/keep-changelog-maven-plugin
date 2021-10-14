@@ -7,7 +7,7 @@ import org.apache.commons.text.StringSubstitutor;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MarkdownChangelogEntryMergeRequest extends MarkdownChangelogEntryAbstract {
+class MarkdownChangelogEntryMergeRequest extends MarkdownChangelogEntryAbstract {
 
     private static final String mergeRequestFormat = "!${merge_request}";
 

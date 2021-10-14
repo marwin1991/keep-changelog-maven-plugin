@@ -1,6 +1,5 @@
-package com.github.marwin1991.keep_changelog.markdown;
+package com.github.marwin1991.keep_changelog.markdown.entry;
 
-import com.github.marwin1991.keep_changelog.markdown.entry.MarkdownChangelogEntryAuthor;
 import com.github.marwin1991.keep_changelog.yaml.model.Author;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import org.apache.commons.lang3.StringUtils;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MarkdownChangelogEntryAuthorTest {
 

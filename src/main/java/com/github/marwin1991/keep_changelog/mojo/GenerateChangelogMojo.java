@@ -3,6 +3,7 @@ package com.github.marwin1991.keep_changelog.mojo;
 import com.github.marwin1991.keep_changelog.markdown.MarkdownChangelog;
 import com.github.marwin1991.keep_changelog.model.Changelog;
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;
+import com.github.marwin1991.keep_changelog.release_date.parser.ReleaseDateFileParser;
 import com.github.marwin1991.keep_changelog.yaml.model.ChangelogEntry;
 import com.github.marwin1991.keep_changelog.yaml.parse.ChangelogEntryParser;
 import org.apache.maven.plugin.AbstractMojo;
@@ -131,17 +132,17 @@ public class GenerateChangelogMojo extends AbstractMojo {
         }
     }
 
-    private Collection<? extends ChangelogEntry> getEntries(File version) {
-        return Arrays.stream(version.listFiles())
+    private Collection<? extends ChangelogEntry> getEntries(File versionDir) {
+        return Arrays.stream(versionDir.listFiles())
                 .filter(file -> file.getName().contains(".yml") || file.getName().contains(".yaml"))
                 .map(ChangelogEntryParser::getChangelogEntriesFromFile)
                 .collect(Collectors.toList());
     }
 
-    private OffsetDateTime getReleaseDate(File version) {
-        return Arrays.stream(version.listFiles())
+    private OffsetDateTime getReleaseDate(File versionDir) {
+        return Arrays.stream(versionDir.listFiles())
                 .filter(file -> file.getName().equals(RELEASE_DATE))
-                .map(ChangelogEntryParser::getReleaseDateFromFile)
+                .map(ReleaseDateFileParser::getReleaseDateFromFile)
                 .findFirst().orElse(null);
     }
 
