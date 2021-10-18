@@ -29,7 +29,7 @@ class MarkdownChangelogEntryTest {
                 .links(changeLinks)
                 .type(ChangeLogEntryType.ADDED)
                 .importantNotes(important)
-                .configuration(config)
+                .configurations(config)
                 .build();
 
         // when

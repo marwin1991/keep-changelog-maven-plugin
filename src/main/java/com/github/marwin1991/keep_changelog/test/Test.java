@@ -13,7 +13,7 @@ import static com.github.marwin1991.keep_changelog.yaml.parse.ChangelogEntryPars
 public class Test {
 
     public static void main(String[] args) {
-        ChangelogEntry entry = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task.yml"));
+        ChangelogEntry entry = getChangelogEntriesFromFile(new File("./changelog/unreleased/0001-configuration-keyword-change.yml"));
         ChangelogEntry entry2 = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task2.yml"));
         ChangelogEntry entry3 = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task3.yml"));
         // ChangelogEntry entry4 = getChangelogEntriesFromFile(new File("./changelog/unreleased/test-task4.yml"));

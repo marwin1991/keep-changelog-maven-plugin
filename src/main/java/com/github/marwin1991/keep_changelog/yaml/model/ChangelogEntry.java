@@ -8,8 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.maven.plugin.logging.SystemStreamLog;
 
 import java.util.List;
 
@@ -27,7 +25,7 @@ public class ChangelogEntry {
     private List<ChangelogLink> links;
     private ChangeLogEntryType type;
     private List<String> importantNotes;
-    private List<Configuration> configuration;
+    private List<Configuration> configurations;
 
     @YamlProperty(key = "merge_request")
     public void setMergeRequest(String mergeRequest) {

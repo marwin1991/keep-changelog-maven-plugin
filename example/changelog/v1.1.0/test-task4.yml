@@ -15,7 +15,7 @@ links: # links to external systems, like redmine something else
     url: https://www.google.pl
 type: removed # [added/changed/deprecated/removed/fixed/security]
 important_notes: some realy important recomendation
-configuration: # information about changes in available application configuration
+configurations: # information about changes in available application configurations
   - action: add # [add/update/delete]
     key: simpleparam.name.enabled
     default_value: true

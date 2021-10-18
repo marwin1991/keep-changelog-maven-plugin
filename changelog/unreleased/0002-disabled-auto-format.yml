@@ -1,4 +1,4 @@
-title: Added maven command to tag unreleased version of CHANGELOG.md
+title: At the begging of `CHANGELOG.md` added comment which disables auto format in JetBrains IDEs.
 authors:
   - name: Piotr
     nick: marwin1991

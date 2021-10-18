@@ -9,6 +9,9 @@ import java.util.LinkedHashMap;
 
 public class MarkdownChangelog implements Markdown {
 
+    private static final String PREVENT_FORMAT_DISCLAIMER =
+            "<!-- @formatter:off --> \n<!-- Prevents auto format, for JetBrains IDE File > Editor > Code Style > Enable formatter markers in comments  -->\n\n";
+
     private final Changelog changelog;
     private LinkedHashMap<String, String> versionsSummaries;
 
@@ -29,12 +32,15 @@ public class MarkdownChangelog implements Markdown {
     public String getChangelog() {
         this.versionsSummaries = new LinkedHashMap<>();
         StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(PREVENT_FORMAT_DISCLAIMER);
         stringBuilder.append(getHeader());
 
-        for (ChangelogVersion version : changelog.getVersions()) {
-            String versionContent = new MarkdownChangelogVersion(version).toMarkdown();
-            versionsSummaries.put(version.getVersion(), versionContent);
-            stringBuilder.append(versionContent).append("\n");
+        if(changelog.getVersions() != null){
+            for (ChangelogVersion version : changelog.getVersions()) {
+                String versionContent = new MarkdownChangelogVersion(version).toMarkdown();
+                versionsSummaries.put(version.getVersion(), versionContent);
+                stringBuilder.append(versionContent).append("\n");
+            }
         }
 
         return stringBuilder.toString();

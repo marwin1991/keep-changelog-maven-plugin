@@ -46,7 +46,8 @@ If you already had a `CHANGELOG.md` file you can move it to `changelog/archive.m
 
 After using `init` command or just creating `changelog/unreleased` directory your project is ready, and you can start adding new changelog entries by creating YAML files.
 
-**IMPORTANT:** If you develop on two main branches like f.e 1.1.X and 1.2.X **do not** merge 1.1.X branch to 1.2.X before release otherwise YAML files will merge in one big version. 
+**IMPORTANT:** If you develop on two main branches like f.e 1.1.X and 1.2.X **do not** merge 1.1.X branch to 1.2.X
+before release otherwise YAML files will merge in one big version.
 _In future there is a plan to support `unreleased*` directories names like `unreleased-1.1`_
 
 ### Adding new change
@@ -55,7 +56,41 @@ TODO
 
 ### YAML format
 
-TODO
+```yml
+title: Test title
+authors:
+  - nick: marwin1991
+    url: https://github.com/marwin1991
+merge_request: 1
+issues:
+  - 1
+links: # links to external systems, like redmine something else
+  - name: TASK_NUMBER
+    url: https://www.google.pl
+type: fixed # [added/changed/deprecated/removed/fixed/security]
+important_notes:
+  - Update style.css on server during instalation 1
+  - configuration 2
+  - configuration 3
+configuration: # information about changes in available application configuration
+  - type: database parameter
+    action: add # [add/update/delete]
+    key: simpleparam.name.enabled
+    default_value: true
+    description: Enables displying feature name
+    more_info: "You can put more information here, any text f.e !1 #1, even [link test](https://google.com)" #if you want to use # sign, yaml value must be a string inside ""
+```
+
+| Keyword  | Description |
+| :------------: | ------------- |
+| `title`  | Description of change that has been made.  |
+| `authors`  | List of change's authors.  |
+| `merge_request`  | The merge request's number which is adding this change.  |
+| `issues` | List of issues associated with this change. |
+| `type` | Type of the change. |
+| `links` | Any link to other project or external tool witch contains information about this change. |
+| `important_notes` | Important notes, that has to be included in release. |
+| `configurations` | Configration changes important during release. |
 
 ### Generating `CHANGELOG.md`
 

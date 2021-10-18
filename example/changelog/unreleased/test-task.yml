@@ -13,7 +13,7 @@ important_notes:
   - Update style.css on server during instalation 1
   - configuration 2
   - configuration 3
-configuration: # information about changes in available application configuration
+configurations: # information about changes in available application configurations
   - type: database parameter
     action: add # [add/update/delete]
     key: simpleparam.name.enabled
