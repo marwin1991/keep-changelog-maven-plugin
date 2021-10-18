@@ -1,4 +1,4 @@
-<!-- @formatter:off --> 
+<!-- @formatter:off --><!-- noinspection -->
 <!-- Prevents auto format, for JetBrains IDE File > Editor > Code Style > Enable formatter markers in comments  -->
 
 [unreleased]

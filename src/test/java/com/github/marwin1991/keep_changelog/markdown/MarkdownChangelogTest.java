@@ -8,10 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class MarkdownChangelogTest {
 
     @Test
-    void disableFormattingTest() {
+    void disableFormattingAndInspectionTest() {
         //given:
         Changelog changelog = new Changelog();
-        String expectedFirstLine = "<!-- @formatter:off -->";
+        String expectedFirstLine = "<!-- @formatter:off --><!-- noinspection -->";
         MarkdownChangelog markdownChangelog = new MarkdownChangelog(changelog);
 
         //when
