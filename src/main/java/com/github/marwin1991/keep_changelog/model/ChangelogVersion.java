@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ChangelogVersion implements Comparable<ChangelogVersion> {
 
-    private String version;
+    private String version; //TODO version summary added formatteroff
     private File versionDirectory;
     private OffsetDateTime releaseDateTime;
     @Singular
