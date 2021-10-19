@@ -11,7 +11,7 @@ class MarkdownChangelogTest {
     void disableFormattingAndInspectionTest() {
         //given:
         Changelog changelog = new Changelog();
-        String expectedFirstLine = "<!-- @formatter:off --><!-- noinspection -->";
+        String expectedFirstLine = "<!-- @formatter:off -->\n<!-- noinspection -->";
         MarkdownChangelog markdownChangelog = new MarkdownChangelog(changelog);
 
         //when
