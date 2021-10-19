@@ -17,7 +17,7 @@ import java.util.Map;
 
 import static com.github.marwin1991.keep_changelog.release_date.format.DateFormat.RELEASE_DATE_FORMAT;
 
-class MarkdownChangelogVersion implements Markdown {
+public class MarkdownChangelogVersion implements Markdown {
 
     private static final String versionHeaderFormat = "[${version}]${releaseData}";
     private static final String releaseDatePrefix = " - ";

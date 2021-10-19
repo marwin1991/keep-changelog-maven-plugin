@@ -1,6 +1,8 @@
 package com.github.marwin1991.keep_changelog.mojo;
 
 import com.github.marwin1991.keep_changelog.markdown.MarkdownChangelog;
+import com.github.marwin1991.keep_changelog.markdown.MarkdownChangelogVersion;
+import com.github.marwin1991.keep_changelog.markdown.MarkdownFileIntro;
 import com.github.marwin1991.keep_changelog.model.Changelog;
 import com.github.marwin1991.keep_changelog.model.ChangelogVersion;
 import com.github.marwin1991.keep_changelog.release_date.parser.ReleaseDateFileParser;
@@ -107,10 +109,10 @@ public class GenerateChangelogMojo extends AbstractMojo {
                 File versionSummaryFile = new File(version.getVersionDirectory() + "/version-summary.md");
                 try {
                     if (versionSummaryFile.exists()) {
-                        saveVersionSummary(markdownChangelog, version, versionSummaryFile);
+                        saveVersionSummary(version, versionSummaryFile);
                     } else {
                         if (versionSummaryFile.createNewFile()) {
-                            saveVersionSummary(markdownChangelog, version, versionSummaryFile);
+                            saveVersionSummary(version, versionSummaryFile);
                         } else {
                             //TODO
                         }
@@ -123,9 +125,10 @@ public class GenerateChangelogMojo extends AbstractMojo {
         }
     }
 
-    private void saveVersionSummary(MarkdownChangelog markdownChangelog, ChangelogVersion version, File versionSummaryFile) {
+    private void saveVersionSummary(ChangelogVersion version, File versionSummaryFile) {
         try (PrintWriter out = new PrintWriter(versionSummaryFile)) {
-            out.println(markdownChangelog.getVersionSummary(version.getVersion()));
+            out.println(new MarkdownFileIntro());
+            out.println(new MarkdownChangelogVersion(version));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             //TODO
