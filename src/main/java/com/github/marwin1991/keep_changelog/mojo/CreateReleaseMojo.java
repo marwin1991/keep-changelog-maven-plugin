@@ -46,7 +46,6 @@ public class CreateReleaseMojo extends AbstractMojo {
         generateChangelogMojo.setLog(getLog());
         generateChangelogMojo.executeGenerate(finalChangelogName, project, yamlFilesDirectory);
 
-        //TODO newest release save to file file release_notes.txt to sue it during release creation
         new InitProjectMojo().generateChangelogDirUnreleasedDirGitKeep(yamlFilesDirectory + "/" + unreleasedVersionDirectory + "/");
         getLog().info("New changelog release successful");
     }

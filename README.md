@@ -37,14 +37,15 @@ Add a plugin to your `pom.xml`. For multi-module projects with one `CHANGELOG.md
     </build>
 ```
 
-[in-progress] Use this command from your terminal to create important directories and empty CHANGELOG.md
+Use this command from your terminal to create important directories and empty CHANGELOG.md
 ```shell
 mvn keep-changelog:init
 ```
 
 If you already had a `CHANGELOG.md` file you can move it to `changelog/archive.md` file. The name of the archive file have to start from `archive` phrase (f.e. `archive-1.0.0.md`).
 
-After using `init` command or just creating `changelog/unreleased` directory your project is ready, and you can start adding new changelog entries by creating YAML files.
+After using `init` command or just creating `changelog/unreleased` directory your project is ready, and you can start
+adding new changelog entries by creating YAML files.
 
 **IMPORTANT:** If you develop on two main branches like f.e 1.1.X and 1.2.X **do not** merge 1.1.X branch to 1.2.X
 before release otherwise YAML files will merge in one big version.
@@ -52,7 +53,14 @@ _In future there is a plan to support `unreleased*` directories names like `unre
 
 ### Adding new change
 
-TODO
+Adding new change is really simple, you can just add new YAML file to `changelog/unreleased` directory and keep format
+presented below. You can also use command to generate this file:
+
+[TODO] - functionality not done yet
+
+```shell
+mvn keep-changelog:add
+```
 
 ### YAML format
 
@@ -94,7 +102,24 @@ configuration: # information about changes in available application configuratio
 
 ### Generating `CHANGELOG.md`
 
-TODO
+Everytime you want to generate `CHANGELOG.md` you can use command:
+
+```shell
+mvn keep-changelog:generate
+```
+
+To prevent merge conflicts (it is idea of this project) generation should be done with use of CI/CD Tool on a main
+branch of a project.
+
+[TODO]
+Create Docker image with this tool, that will be use in CI/CD Tool, so that not only java projects will be able to use
+it.
+
+### Creating release (from unreleased)
+
+```shell
+mvn keep-changelog:release
+```
 
 ### `CHANGELOG.md` structure overview
 
