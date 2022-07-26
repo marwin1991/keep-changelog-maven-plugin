@@ -1,3 +1,7 @@
+# This project is archive
+**Go to** [**https://github.com/logchange/logchange**](https://github.com/logchange/logchange)
+
+
 # keep-changelog-maven-plugin
 `CHANGELOG.md` is one of the most important files in a repository. It allows others to find out about 
 the most important changes in the project in short time.
